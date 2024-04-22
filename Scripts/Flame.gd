@@ -20,20 +20,12 @@ func _process(delta):
 
 	if mouse_pos.x > mouse_pos_old.x:
 		movement_dir = 'r'
-		$Left.visible = true
-		$Still.visible = false
-		$Right.visible = false
-		
+		$FlameAnimation.play("Left")
 	elif mouse_pos.x < mouse_pos_old.x:
 		movement_dir = 'l'
-		$Left.visible = false
-		$Still.visible = false
-		$Right.visible = true
+		$FlameAnimation.play("Right")
 	else:
 		movement_dir = 'm'
-		$Left.visible = false
-		$Still.visible = true
-		$Right.visible = false
+		$FlameAnimation.play("Still")
 
-	print(movement_dir)
 	mouse_pos_old = get_viewport().get_mouse_position()

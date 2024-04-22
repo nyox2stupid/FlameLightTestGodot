@@ -157,30 +157,13 @@ sources/0 = SubResource("TileSetAtlasSource_xohb5")
 scale = Vector2(3, 3)
 script = ExtResource("1_ro8gn")
 
-[node name="Still" type="AnimatedSprite2D" parent="Flame"]
-visible = false
+[node name="FlameAnimation" type="AnimatedSprite2D" parent="Flame"]
 z_index = 1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7j3pp")
 animation = &"Still"
 autoplay = "Still"
 frame_progress = 0.994783
-
-[node name="Left" type="AnimatedSprite2D" parent="Flame"]
-visible = false
-z_index = 1
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_7j3pp")
-animation = &"Left"
-autoplay = "Left"
-
-[node name="Right" type="AnimatedSprite2D" parent="Flame"]
-visible = false
-z_index = 1
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_7j3pp")
-animation = &"Right"
-autoplay = "Right"
 
 [node name="PointLight2D" type="PointLight2D" parent="Flame"]
 texture = ExtResource("2_vnirn")
