@@ -1,9 +1,10 @@
 extends Node2D
 
+var mouse_pos_old = Vector2.ZERO
+var movement_dir = 'm'
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var movement_dir = 'm'
 	var mouse_pos_old = get_viewport().get_mouse_position()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,12 +16,22 @@ func _process(delta):
 	position = mouse_pos
 
 
-	if mouse_pos[0]>mouse_pos_old[0]:
+	if mouse_pos.x > mouse_pos_old.x:
 		movement_dir = 'r'
-	else if mouse_pos[0]<mouse_pos_old[0]:
+		$Left.visible = true
+		$Still.visible = false
+		$Right.visible = false
+		
+	elif mouse_pos.x < mouse_pos_old.x:
 		movement_dir = 'l'
+		$Left.visible = false
+		$Still.visible = false
+		$Right.visible = true
 	else:
 		movement_dir = 'm'
+		$Left.visible = false
+		$Still.visible = true
+		$Right.visible = false
 
 	print(movement_dir)
-	var mouse_pos_old = get_viewport().get_mouse_position()
+	mouse_pos_old = get_viewport().get_mouse_position()
